@@ -105,7 +105,7 @@
                 <h1 class="text-3xl md:text-4xl font-semibold mb-4">Hello, I'm Tawfik Osman</h1>
                 <p class="text-sm md:text-lg font-light mb-8">I am a PhD student at Arizona State University, supervised by <a href="https://www.aalkhateeb.net/" target="_blank" class="text-blue-600 hover:text-blue-800 transition duration-300">Professor Ahmed Alkhateeb</a>. I completed my MSE in Electrical Engineering at Arizona State University in May 2021. I am currently a graduate research assistant at <a href="https://www.wi-lab.net/" target="_blank" class="text-blue-600 hover:text-blue-800 transition duration-300">Wireless Intelligence Lab</a>.</p>
                 
-                <div class="flex flex-col sm:flex-row gap-4 items-center justify-between">
+                <div class="flex flex-col md:flex-row gap-4 items-center justify-between">
                     <a href="images/Tawfik_Osman_RESUME.pdf" download class="flex justify-center items-center gap-3 px-4 py-3 border-2 border-gray-800 rounded-md hover:text-gray-500 hover:border-gray-600 transition duration-500 ease-in-out font-medium">
                         <p>Download CV</p>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
@@ -114,7 +114,7 @@
                         </svg>
                     </a>
                     <!-- Social Links -->
-                    <div class="flex gap-8">
+                    <div class="hidden md:flex gap-8">
                         <a href="mailto:tmosman@asu.edu" target="_blank" rel="noopener noreferrer">
                             <img width="32" height="32" src="https://img.icons8.com/material-rounded/24/new-post.png" alt="new-post"/>
                         </a>
@@ -136,10 +136,24 @@
                     <img src="images/profile-tawfik.png" alt="Tawfik Osman" class="w-full h-full rounded-2xl object-cover">
                 </div>
             </div>
+            <!-- Social Links -->
+            <div class="md:hidden flex justify-center gap-8 my-4">
+                <a href="mailto:tmosman@asu.edu" target="_blank" rel="noopener noreferrer">
+                    <img width="32" height="32" src="https://img.icons8.com/material-rounded/24/new-post.png" alt="new-post"/>
+                </a>
+                <a href="https://mcfscholars.asu.edu/node/137" target="_blank" rel="noopener noreferrer">
+                    <img width="32" height="32" src="https://img.icons8.com/ios-filled/50/google-scholar--v2.png" alt="google-scholar--v2"/>
+                </a>
+                <a href="https://www.linkedin.com/in/tmosman/" target="_blank" rel="noopener noreferrer">
+                    <img width="32" height="32" src="https://img.icons8.com/ios-glyphs/30/linkedin.png" alt="linkedin"/>
+                </a>
+                <a href="https://github.com/tmosman" target="_blank" rel="noopener noreferrer">
+                    <img width="32" height="32" src="https://img.icons8.com/ios-glyphs/30/github.png" alt="github"/>
+                </a>
+            </div>
         </div>
         <!-- Research Section -->
-        <section id="research" @click="activeLink = 'research'; open = false" 
-        :class="{'pt-24': activeLink === 'research'}" class="pb-16 text-justify">
+        <section id="research" class="pt-8 pb-16 text-justify">
             <h2 class="text-3xl font-semibold text-center mb-8">Research</h2>
             <div class="text-lg text-gray-700 leading-relaxed space-y-6">
                 <p>As a PhD student at Arizona State University under Professor Ahmed Alkhateeb, my current research focuses on [briefly describe your research area here, such as wireless communication, AI applications, or data analysis, etc.]. I am part of the Wireless Intelligence Lab, where we work on cutting-edge innovations in [related fields].</p>
@@ -174,13 +188,13 @@
             </div>
         </section>
     </main>
-    <footer class="bg-gray-100 w-full mx-auto px-6 sm:px-8 md:px-16 lg:px-24 xl:px-32 2xl:px-64">
+    <footer class=""">
         <!-- Contact Me Section -->
-        <section id="contact" class="py-16 mt-8">
+        <section id="contact" class="py-16 mt-8 bg-gray-100 w-full mx-auto px-6 sm:px-8 md:px-16 lg:px-24 xl:px-32 2xl:px-64">
             <h2 class="text-3xl font-semibold text-center mb-8">Contact Me</h2>
             <div class="flex flex-col lg:flex-row">
-                <form action="#" method="POST" class="w-full max-w-lg mx-auto">
-                    <div class="grid grid-cols-1 gap-6">
+                <form action="#" method="POST" class="w-full max-w-lg mx-auto border border-gray-300 p-6 rounded-lg">
+                    <div class="grid grid-cols-1 gap-4">
                         <div>
                             <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
                             <input type="text" id="name" name="name" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-blue-300 focus:border-gray-400 transition duration-300" required>
@@ -198,8 +212,8 @@
                         </div>
                     </div>
                 </form>
-                <div class="flex flex-col justify-between items-center text-gray-700">
-                    <h3 class="text-3xl mb-8 mt-8 lg:mt-0">Reach Out Today.</h3>
+                <div class="flex flex-col justify-between items-center text-gray-700 w-full max-w-lg mx-auto">
+                    <h3 class="text-3xl mb-8 mt-12 lg:mt-0">Reach Out Today.</h3>
                     <div class="flex flex-col justify-center items-center gap-2 text-gray-500 text-center">
                         <p class="text-xl font-medium">Tawfik Osman Mohammed</p>
                         <p>The School of Electrical, Computer and Energy Engineering</p>
@@ -215,6 +229,16 @@
                             <a href="mailto:tmosman@asu.edu" class="text-gray-700 hover:text-blue-600 transition duration-300">Email</a>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+        <section class="bg-gray-100 w-full">
+            <div class="flex flex-col gap-5 border-t border-gray-500 py-8">
+                <div class="">
+                    <p class="text-center text-gray-600 text-sm">&copy; 2024 Tawfik Osman. All rights reserved.</p>
+                </div>
+                <div class="">
+                    <p class="text-center text-gray-600 text-sm">Designed by <a href="https://www.smashingmagazine.com/" target="_blank" class="text-blue-600 hover:text-blue-800 transition duration-300">Abubakari Sadik Osman</a></p>
                 </div>
             </div>
         </section>
