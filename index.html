@@ -100,7 +100,7 @@
 
     <!-- Main Content -->
     <main class="w-full mx-auto px-6 sm:px-8 md:px-16 lg:px-24 xl:px-32 2xl:px-64">
-        <div class="w-full flex flex-col lg:flex-row justify-between my-8 lg:my-16 xl:gap-64 lg:gap-24 md:gap-16 gap-8">
+        <div class="w-full flex flex-col lg:flex-row justify-between my-16 lg:my-20 xl:gap-64 lg:gap-24 md:gap-16 gap-8">
             <div class="flex flex-col justify-center text-center lg:text-left">
                 <h1 class="text-3xl md:text-4xl font-semibold mb-4">Hello, I'm Tawfik Osman</h1>
                 <p class="text-sm md:text-lg font-light mb-8">I am a PhD student at Arizona State University, supervised by <a href="https://www.aalkhateeb.net/" target="_blank" class="text-blue-600 hover:text-blue-800 transition duration-300">Professor Ahmed Alkhateeb</a>. I completed my MSE in Electrical Engineering at Arizona State University in May 2021. I am currently a graduate research assistant at <a href="https://www.wi-lab.net/" target="_blank" class="text-blue-600 hover:text-blue-800 transition duration-300">Wireless Intelligence Lab</a>.</p>
@@ -153,18 +153,80 @@
             </div>
         </div>
         <!-- Research Section -->
-        <section id="research" class="pt-8 pb-16 text-justify">
-            <h2 class="text-3xl font-semibold text-center mb-8">Research</h2>
-            <div class="text-lg text-gray-700 leading-relaxed space-y-6">
-                <p>As a PhD student at Arizona State University under Professor Ahmed Alkhateeb, my current research focuses on [briefly describe your research area here, such as wireless communication, AI applications, or data analysis, etc.]. I am part of the Wireless Intelligence Lab, where we work on cutting-edge innovations in [related fields].</p>
-                <p>Prior to this, I completed an MSE in Electrical Engineering at Arizona State University in May 2021, where I focused on [mention your area of focus or a notable thesis project]. This background has been foundational in shaping my academic journey and aspirations in the field.</p>
-                <!-- Optional: Link to detailed research or publications -->
-                <p>For a complete list of my publications and research work, please refer to my <a href="https://www.linkedin.com/in/tmosman/" target="_blank" class="text-blue-600 hover:text-blue-800 transition duration-300">LinkedIn</a> or <a href="https://mcfscholars.asu.edu/node/137" target="_blank" class="text-blue-600 hover:text-blue-800 transition duration-300">ASU profile</a>.</p>
+        <section id="research" class="py-24 text-justify bg-gray-100">
+            <div class="max-w-4xl mx-auto px-6 sm:px-12">
+                <h2 class="text-3xl font-semibold text-center mb-10 text-gray-800">Research</h2>
+                <div class="font-light text-lg text-gray-700 leading-relaxed space-y-8">
+                    <p>
+                        My research focuses on building frameworks for <i>digital twin-assisted mmWave beam management</i>, 
+                        <i>vision-aided wireless communication models</i>, and other innovations in cutting-edge wireless technologies. 
+                        I am part of the <b>Wireless Intelligence Lab</b>, where we work on developing state-of-the-art 
+                        solutions for challenges in wireless communication and AI applications.
+                    </p>
+                    <div>
+                        <h4 class="text-2xl font-semibold text-gray-800 mb-4">Research Interests:</h4>
+                        <ul class="ml-10 list-disc text-left space-y-2">
+                            <li>Machine Learning in Wireless Communication</li>
+                            <li>Vision-Aided Models for Beam Training</li>
+                            <li>Wireless Communication Channel Estimation and Modelling</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-2xl font-semibold text-gray-800">Research Activities</h4>
+                        <ul class="ml-10 list-disc text-left space-y-4 mt-4">
+                            <li>
+                                Built a framework for digital twin-assisted mmWave beam management on real-time testbeds and 
+                                standard-compliant research platforms.
+                            </li>
+                            <li>
+                                Implemented a 5G standalone (SA) setup using OAI open-source code, software-defined radios from 
+                                Ettus Research, and mmWave RF front-ends for FR1 and FR2 bands.
+                            </li>
+                            <li>
+                                Developed vision-aided mmWave beam tracking algorithms for vehicle-to-vehicle (V2V) 
+                                communication scenarios using <a href="https://www.deepsense6g.net/" target="_blank" 
+                                class="text-blue-600 hover:text-blue-800 transition duration-300">DeepSense6G</a> datasets.
+                            </li>
+                            <li>
+                                Contributed to the design of a multi-modal testbed for acquiring wireless and sensor datasets 
+                                in DeepSense6G, enabling the development of AI models for 6G research.
+                            </li>
+                            <li>
+                                Leveraged deep learning techniques to map sub-GHz channel state information (CSI) to mmWave beam vectors 
+                                using real dual-band testbed datasets.
+                            </li>
+                            <li>
+                                Built an end-to-end communication testbed for field evaluations of prototype sub-6GHz and mmWave 
+                                Reconfigurable Intelligent Surfaces (RIS).
+                            </li>
+                        </ul>
+                    </div>
+                    <p>
+                        Prior to this, I completed my <b>MSE in Electrical Engineering</b> at Arizona State University in May 2021, 
+                        where I focused on predicting mmWave beams using sensory data, such as GPS and RGB images. 
+                        My project highlights include:
+                    </p>
+                    <ul class="ml-10 list-disc text-left space-y-4">
+                        <li>
+                            Integrated GPS-RTK receivers and stereo camera sensors into a sub-6GHz testbed for real-world 
+                            vehicle-to-vehicle communication studies.
+                        </li>
+                        <li>
+                            Developed a machine learning model leveraging pre-trained ResNets and fully connected neural networks, 
+                            utilizing datasets that combine vision, GPS, and wireless signals.
+                        </li>
+                    </ul>
+                    <p>
+                        For more details on my work and contributions, visit my 
+                        <a href="https://www.linkedin.com/in/tmosman/" target="_blank" 
+                        class="text-blue-600 hover:text-blue-800 transition duration-300">linkedIn profile</a>.
+                    </p>
+                </div>
             </div>
         </section>
-
+        
         <!-- Projects Section -->
-        <section id="projects" class="pt-8 pb-16 px-8 md:px-0">
+        <section id="projects" class="py-24 px-8 md:px-0">
             <h2 class="text-3xl font-semibold text-center mb-8">Projects</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Project 1 -->
@@ -190,8 +252,8 @@
     </main>
     <footer class="">
         <!-- Contact Me Section -->
-        <section id="contact" class="py-16 mt-8 bg-gray-100 w-full mx-auto px-6 sm:px-8 md:px-16 lg:px-24 xl:px-32 2xl:px-64">
-            <h2 class="text-3xl font-semibold text-center mb-8">Contact Me</h2>
+        <section id="contact" class="py-24 mt-8 bg-gray-100 w-full mx-auto px-6 sm:px-8 md:px-16 lg:px-24 xl:px-32 2xl:px-64">
+            <h2 class="text-3xl font-semibold text-center mb-16">Contact Me</h2>
             <div class="flex flex-col lg:flex-row">
                 <form action="#" method="POST" class="w-full max-w-lg mx-auto border border-gray-300 p-6 rounded-lg">
                     <div class="grid grid-cols-1 gap-4">
@@ -232,8 +294,8 @@
                 </div>
             </div>
         </section>
-        <section class="bg-gray-100 w-full">
-            <div class="flex flex-col gap-5 border-t border-gray-500 py-8">
+        <section class="bg-white w-full">
+            <div class="flex flex-col gap-5 border-t border-gray-500 py-12">
                 <div class="">
                     <p class="text-center text-gray-600 text-sm">&copy; 2024 Tawfik Osman. All rights reserved.</p>
                 </div>
