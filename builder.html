@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOM Builder</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.0" defer></script>
+</head>
+<body class="scroll-smooth text-gray-800" x-data="{ open: false, activeLink: 'home' }" x-init="
+window.addEventListener('resize', () => {
+    if (window.innerWidth >= 768) open = false;
+});
+">
+    <!-- Navbar -->
+    <header class="fixed top-0 bg-white text-gray-800 w-full mx-auto px-6 sm:px-8 md:px-16 lg:px-24 xl:px-32 2xl:px-64">
+        <nav class="flex items-center space-x-6 justify-between py-5">
+            <h1 class="text-2xl md:text-3xl font-semibold">Builder</h1>
+            <div class="flex items-center justify-center lg:gap-8 md:gap-4 sm:gap-4">
+                <a href="./index.html" target="_blank" class="text-lg hover:border-r-2 pr-2 border-yellow-400 transition duration-500 ease-in-out flex items-center gap-1">
+                    <p>Site</p>
+                    <img src="/images/open1.png" alt="Open site" width="30" height="30">
+                </a>
+                <button @click="open = !open" 
+                        :class="{'hidden': open === true}" class="focus:outline-none cursor-pointer">
+                    <img src="../images/profile-tawfik.png" alt="Account" class="w-10 h-10 rounded-full border-white border">
+                </button>  
+            </div>
+            <!-- Sidebar Menu for Small Devices -->
+            <div class="fixed top-0 right-0">
+                <div x-show="open" x-cloak class="flex flex-col w-56 bg-white shadow-lg z-50 transform transition-transform duration-300 rounded-bl-lg">
+                    <!-- Close button -->
+                    <div class="flex justify-between items-center px-6 py-6 xl:justify-end">
+                        <a href="./index.html" target="_blank" class="xl:hidden text-lg hover:border-r-2 pr-2 border-yellow-400 transition duration-500 ease-in-out flex items-center gap-1">
+                            <p>Site</p>
+                            <img src="/images/open1.png" alt="Open site" width="30" height="30">
+                        </a>
+                        <button @click="open = false" class="self-end text-gray-800 focus:outline-none">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <!-- Sidebar Links -->
+                    <div class="px-6 flex flex-col" x-data="{ editMode: false }">
+                        <div class="flex items-center space-x-4">
+                            <img src="/images/profile-tawfik.png" alt="Profile" class="w-14 h-14 rounded-full border-2 border-gray-400">
+                            <h3 class="font-semibold text-gray-700 text-[0.96rem] text-center">Tawfik Osman Mohammed</h3>
+                        </div>
+                        <!-- Edit Profile Picture -->
+                        <div class="pb-3 flex flex-col items-center">
+                            <button class="text-blue-500 hover:underline text-sm my-2" @click="editMode = !editMode">Edit Profile</button>
+                        </div>
+
+                        <!-- Logout Button -->
+                        <button @click="logout()" class="w-full py-2 bg-red-500 text-white rounded-md hover:bg-red-600 mb-6">Logout</button>
+                    </div>
+                </div>
+            </div>
+
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="w-full mx-auto px-6 sm:px-8 md:px-16 lg:px-24 xl:px-32 2xl:px-64 pt-20">
+        <form class="space-y-8 bg-white p-8 rounded-lg shadow-md">
+            <!-- Profile Information -->
+            <section>
+                <h2 class="text-xl font-semibold text-gray-800 mb-4">Profile Information</h2>
+                <div class="space-y-4">
+                    <div>
+                        <label for="fullname" class="block text-gray-600 font-medium mb-2">Full Name</label>
+                        <input type="text" id="fullname" name="fullname" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-blue-500 focus:outline-none" placeholder="Enter your full name" required>
+                    </div>
+                    <div>
+                        <label for="description" class="block text-gray-600 font-medium mb-2">Description</label>
+                        <textarea id="description" name="description" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-blue-500 focus:outline-none" rows="3" placeholder="Describe yourself..."></textarea>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Social Links -->
+            <section>
+                <h2 class="text-xl font-semibold text-gray-800 mb-4">Social Links</h2>
+                <div class="space-y-4">
+                    <div>
+                        <label for="linkedin" class="block text-gray-600 font-medium mb-2">LinkedIn</label>
+                        <input type="url" id="linkedin" name="linkedin" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-blue-500 focus:outline-none" placeholder="LinkedIn URL">
+                    </div>
+                    <div>
+                        <label for="github" class="block text-gray-600 font-medium mb-2">GitHub</label>
+                        <input type="url" id="github" name="github" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-blue-500 focus:outline-none" placeholder="GitHub URL">
+                    </div>
+                    <div>
+                        <label for="other" class="block text-gray-600 font-medium mb-2">Google Scholar / IEEE or Others</label>
+                        <input type="url" id="other" name="other" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-blue-500 focus:outline-none" placeholder="Other profile URL">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Attachment -->
+            <section>
+                <h2 class="text-xl font-semibold text-gray-800 mb-4">Attachment</h2>
+                <div class="space-y-4">
+                    <div>
+                        <label for="profile-picture" class="block text-gray-600 font-medium mb-2">Upload profile picture</label>
+                        <input type="file" id="profile-picture" name="profile-picture" accept="image/png, image/jpeg" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                    </div>
+                    <div>
+                        <label for="resume" class="block text-gray-600 font-medium mb-2">Upload RESUME / CV</label>
+                        <input type="file" id="resume" name="resume" accept=".pdf,.docx" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Research -->
+            <section>
+                <h2 class="text-xl font-semibold text-gray-800 mb-4">Research</h2>
+                <div class="space-y-4">
+                    <div>
+                        <label for="research-description" class="block text-gray-600 font-medium mb-2">Research Scope</label>
+                        <textarea id="research-description" name="research-description" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-blue-500 focus:outline-none" rows="3"></textarea>
+                    </div>
+                    <div>
+                        <label class="block text-gray-600 font-medium">Research Interests</label>
+                        <div id="research-interests-list"></div>
+                        <button type="button" class="bg-blue-500 text-white px-4 py-2 mt-2 rounded-lg hover:bg-blue-600 transition" onclick="addResearchInterest()">+ Add Research Interest</button>
+                    </div>
+                    <div>
+                        <label class="block text-gray-600 font-medium mb-2">Research Activities</label>
+                        <div id="research-activities-list"></div>
+                        <button type="button" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition" onclick="addResearchActivity()">+ Add Research Activity</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects -->
+            <section>
+                <h2 class="text-xl font-semibold text-gray-800 mb-2">Projects</h2>
+                <div id="projects-list" class="space-y-4 mb-4"></div>
+                <button type="button" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition" onclick="addProject()">+ Add Project</button>
+            </section>
+
+            <!-- Contact Information -->
+            <section>
+                <h2 class="text-xl font-semibold text-gray-800 mb-4">Contact Information</h2>
+                <div class="space-y-4">
+                    <div>
+                        <label for="email" class="block text-gray-600 font-medium mb-2">Email</label>
+                        <input type="email" id="email" name="email" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-blue-500 focus:outline-none" placeholder="Enter your email">
+                    </div>
+                    <div>
+                        <label for="address" class="block text-gray-600 font-medium mb-2">Address</label>
+                        <textarea id="address" name="address" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-blue-500 focus:outline-none" rows="2"></textarea>
+                    </div>
+                    <div>
+                        <label for="phone" class="block text-gray-600 font-medium mb-2">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-blue-500 focus:outline-none" placeholder="Enter your phone number">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Submit Button -->
+            <div class="text-right">
+                <button type="submit" class="bg-green-500 text-white px-6 py-2 rounded-lg hover:bg-green-600 transition">Submit</button>
+            </div>
+        </form>
+    </main>
+</body>
+</html>
